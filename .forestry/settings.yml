@@ -8,7 +8,7 @@ sections:
   path: src
   label: content
   create: all
-  match: "**/*"
+  match: "**/*.md"
 upload_dir: src/images
 public_path: "/images"
 front_matter_path: ''

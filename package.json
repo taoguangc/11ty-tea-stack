@@ -1,0 +1,61 @@
+{
+  "name": "tea-stack",
+  "version": "1.0.0",
+  "description": "A starter template for the TEA stack.",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
+    "build:eleventy": "eleventy",
+    "build:webpack": "webpack",
+    "clean": "rimraf _site",
+    "dev": "npm-run-all clean -p build:* -p dev:*",
+    "dev:eleventy": "eleventy --serve --quiet",
+    "dev:webpack": "cross-env NODE_ENV=development webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattwaler/tea-stack.git"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "htmlWhitespaceSensitivity": "ignore"
+  },
+  "keywords": [
+    "eleventy",
+    "tailwind",
+    "alpine"
+  ],
+  "author": "Matt Waler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattwaler/tea-stack/issues"
+  },
+  "homepage": "https://github.com/mattwaler/tea-stack#readme",
+  "dependencies": {
+    "alpinejs": "^3.0.6",
+    "sal.js": "^0.8.5",
+    "turbolinks": "^5.2.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-img": "^0.9.0",
+    "@tailwindcss/forms": "^0.3.3",
+    "autoprefixer": "^10.2.6",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
+    "mini-css-extract-plugin": "^1.6.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.5",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.1.0",
+    "rimraf": "^3.0.2",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^2.2.0",
+    "tailwindcss-debug-screens": "^2.0.0",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2"
+  }
+}

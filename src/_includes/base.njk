@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}"/>
+  <link rel="stylesheet" href="/assets/main.bundle.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png"/>
+  <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/icons/favicon.svg"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png" />
+  <script src="/assets/main.bundle.js" defer></script>
+  {% block head %}{% endblock %}
+</head>
+<body  x-data="{ toTop: false }" @scroll.window="toTop = ( window.pageYOffset > window.innerHeight) ? true : false" class="{{ 'debug-screens' if env.devMode }}">
+  {% include 'partials/header.njk' %}
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+  {% include 'partials/footer.njk' %}
+</body>
+</html>

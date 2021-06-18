@@ -1,0 +1,101 @@
+---
+layout: 'home.njk'
+title: 'Home'
+meta:
+  desc:
+    '11st-Starter-Kit is a minimal starting point for building static websites
+    with 11ty, powered by Snowpack with Tailwind CSS and Alpine.js.'
+intro:
+  title: 'Welcome to Your Eleventy App'
+  desc:
+    'For a guide and recipes on how to configure / customize this project, check
+    out the <a href="https://www.11ty.dev/docs/" class="text-gray-900
+    font-medium underline">Eleventy</a> and <a href="https://www.snowpack.dev/"
+    class="text-gray-900 font-medium underline">Snowpack</a> documentation.'
+---
+
+<section class="mt-0 lg:mt-20 w-full flex-col-reverse lg:flex-row items-center">
+  <div class="w-full h-full sm:flex-1 lg:ml-12 z-10 relative">
+    <h1 class="px-24 lg:px-0 my-32 lg:m-0 lg:-mr-36 lg:leading-tight" data-sal="slide-up" data-sal-duration="1000">
+      We build top-notch custom web and mobile solutions
+    </h1>
+    <a href="#mywork" class="absolute left-1/2 lg:-bottom-24 block animate-bounce w-6 h-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+  <div class="w-full sm:flex-1">
+    {% image "hero.jpg", "Panasonic", "w-full" %}
+  </div>
+</section>
+
+<section class="w-full my-48 flex items-center" id="mywork">
+  <h2 class="mx-auto my-16 uppercase">My Work</h2>
+  <div class="container -mx-8 flex flex-wrap">
+    {% for work in collections.works | reverse %}
+    <div class="p-8 sm:w-1/2">
+      <a class="text-base block duration-700 transform-gpu hover:-translate-y-4" href="{{ work.url }}">
+        {# {% image "{{ work.data.thumb }}", "Panasonic", "w-full" %} #}
+        <img src="{{ work.data.thumb }}" class="border border-gray-400 shadow-xl hover:shadow-2xl" alt="work-thumb" loading="lazy" decoding="async">
+        <h3 class="mt-2 text-lg font-normal">
+          {{ work.data.title }}
+        </h3>
+      </a>
+    </div>
+    {% endfor %}
+    <a href="/work" class="mt-24 mx-auto btn">See all work</a>
+  </div>
+</section>
+
+<section data-bg="#f3e7df">
+  <div class="container px-6 py-32 px">
+    <h4 class="mb-12 uppercase">Things we do well</h4>
+    <div class="flex flex-col lg:flex-row flex-wrap">
+      <ul class="w-full lg:w-1/2 text-3xl font-extralight leading-loose">
+        <li>Wordpress</li>
+        <li>Builder</li>
+        <li>Hugo/Eleventy</li>
+        <li>Gatsby</li>
+        <li>Webpack/Snowpack</li>
+      </ul>
+      <ul class="w-full lg:w-1/2 text-3xl font-extralight leading-loose">
+        <li>Front-end Development</li>
+        <li>Web Design</li>
+        <li>UI/UX Design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-bg="#c3cfd7">
+  <div class="container min-h-screen px-6 py-48">
+    <h4 class="mb-16 uppercase">Our clients</h4>
+    <ul class="clients ">
+      <li data-sal="slide-up" data-sal-duration="1000">
+        <a href="//panasonic.cn/"><img src="images/clients/logo-panasonic.png" alt="Panasonic" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//midea.com/cn/"><img src="images/clients/logo-midea.png" alt="Midea" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//colmo.com.cn/"><img src="images/clients/logo-colmo.png" alt="COLMO" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//haier.com/"><img src="images/clients/logo-haier.png" alt="Haier" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//tcl.com/"><img src="images/clients/logo-tcl.png" alt="TCL" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//joyoung.com/"><img src="images/clients/logo-joyoung.png" alt="Joyoung" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//robam.com/"><img src="images/clients/logo-robam.png" alt="Robam" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//whirlpool.com.cn/"><img src="images/clients/logo-whirlpool.png" alt="Whirlpool" loading="lazy" decoding="async"></a>
+      </li>
+    </ul>
+  </div>
+</section>

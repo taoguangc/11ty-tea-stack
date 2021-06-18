@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | </title>
+  <meta name="description" content=""/>
+  <link rel="stylesheet" href="/assets/main.bundle.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png"/>
+  <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/icons/favicon.svg"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png" />
+  <script src="/assets/main.bundle.js" defer></script>
+  
+</head>
+<body  x-data="{ toTop: false }" @scroll.window="toTop = ( window.pageYOffset > window.innerHeight) ? true : false" class="debug-screens">
+  <header class="w-full bg-white">
+  <nav class="flex items-center justify-between flex-wrap px-8 py-12 container mx-auto" x-data="{ isOpen: false }">
+    <figure class="flex items-center">
+      <a href="https://emptyarea.com/" class="text-indigo-500 font-bold text-lg">
+        <img src="images/logo-emptyarea.svg" alt="emptyarea" class="h-10 lg:h-15 w-auto">
+      </a>
+      <figcaption class="hidden">emptyarea.com</figcaption>
+    </figure>
+    <div class="hidden sm:block lg:flex lg:items-center lg:w-auto text-center">
+      <ul class="flex space-x-24">
+        
+        <li class="relative">
+          <a class="block group" href="/">
+            Home
+            <div class="absolute border-b border-black transition-all duration-500 transform group-hover:w-full w-full" aria-hidden="true"></div>
+          </a>
+        </li>
+        
+        <li class="relative">
+          <a class="block group" href="/work/">
+            Work
+            <div class="absolute border-b border-black transition-all duration-500 transform group-hover:w-full w-0" aria-hidden="true"></div>
+          </a>
+        </li>
+        
+        <li class="relative">
+          <a class="block group" href="/about/">
+            About
+            <div class="absolute border-b border-black transition-all duration-500 transform group-hover:w-full w-0" aria-hidden="true"></div>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+    <button type="button" class="sm:hidden z-50 inline-flex items-center justify-center p-2 text-white focus:outline-none" @click="isOpen = !isOpen" aria-controls="mobile-menu" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#333" aria-hidden="true" x-show="!isOpen">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" aria-hidden="true" x-show="isOpen" data-sal="flip-left" data-sal-duration="1000">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="sm:hidden z-20 absolute inset-0 w-full h-screen bg-black" x-show="isOpen" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="transform translate-x-full" x-transition:leave="transition ease-in duration-500" x-transition:leave-end="transform -translate-x-full">
+      <ul class="mx-auto p-24 text-white flex flex-col items-start">
+        <li class="relative my-8 text-xl" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="0">
+          <a class="block group" href="https://emptyarea.com/">
+            Home
+            <div class="absolute border-b border-white transition-all duration-500 transform group-hover:w-full w-full" aria-hidden="true"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</header>
+
+  
+  
+<section class="mt-0 lg:mt-20 w-full flex-col-reverse lg:flex-row items-center">
+  <div class="w-full h-full sm:flex-1 lg:ml-12 z-10 relative">
+    <h1 class="px-24 lg:px-0 my-32 lg:m-0 lg:-mr-36 lg:leading-tight" data-sal="slide-up" data-sal-duration="1000">
+      We build top-notch custom web and mobile solutions
+    </h1>
+    <a href="#mywork" class="absolute left-1/2 lg:-bottom-24 block animate-bounce w-6 h-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+  <div class="w-full sm:flex-1">
+    <picture>
+      <source type="image/avif" srcset="/images/hero-640w.avif 640w, /images/hero-960w.avif 960w" sizes="(min-width: 1024px) 100vw, 50vw">
+  <source type="image/webp" srcset="/images/hero-640w.webp 640w, /images/hero-960w.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw">
+  <source type="image/jpeg" srcset="/images/hero-640w.jpeg 640w, /images/hero-960w.jpeg 960w" sizes="(min-width: 1024px) 100vw, 50vw">
+    <img
+      src="/images/hero-640w.jpeg"
+      width="640"
+      height="480"
+      alt="Panasonic"
+      class="w-full"
+      loading="lazy"
+      decoding="async">
+  </picture>
+  </div>
+</section>
+
+<section class="w-full my-48 flex items-center" id="mywork">
+  <h2 class="mx-auto my-16 uppercase">My Work</h2>
+  <div class="container -mx-8 flex flex-wrap">
+    
+    <div class="p-8 sm:w-1/2">
+      <a class="text-base block duration-700 transform-gpu hover:-translate-y-4" href="/works/nespresso/">
+        
+        <img src="images/work/nespresso-thumb.webp" class="border border-gray-400 shadow-xl hover:shadow-2xl" alt="work-thumb" loading="lazy" decoding="async">
+        <h3 class="mt-2 text-lg font-normal">
+          Nespresso
+        </h3>
+      </a>
+    </div>
+    
+    <div class="p-8 sm:w-1/2">
+      <a class="text-base block duration-700 transform-gpu hover:-translate-y-4" href="/works/dachoo/">
+        
+        <img src="images/work/dachoo-thumb.webp" class="border border-gray-400 shadow-xl hover:shadow-2xl" alt="work-thumb" loading="lazy" decoding="async">
+        <h3 class="mt-2 text-lg font-normal">
+          DACHOO
+        </h3>
+      </a>
+    </div>
+    
+    <div class="p-8 sm:w-1/2">
+      <a class="text-base block duration-700 transform-gpu hover:-translate-y-4" href="/works/donaldson/">
+        
+        <img src="images/work/donaldson-thumb.webp" class="border border-gray-400 shadow-xl hover:shadow-2xl" alt="work-thumb" loading="lazy" decoding="async">
+        <h3 class="mt-2 text-lg font-normal">
+          Donaldson
+        </h3>
+      </a>
+    </div>
+    
+    <div class="p-8 sm:w-1/2">
+      <a class="text-base block duration-700 transform-gpu hover:-translate-y-4" href="/works/colmo/">
+        
+        <img src="images/work/colmo-thumb.webp" class="border border-gray-400 shadow-xl hover:shadow-2xl" alt="work-thumb" loading="lazy" decoding="async">
+        <h3 class="mt-2 text-lg font-normal">
+          COLMO
+        </h3>
+      </a>
+    </div>
+    
+    <div class="p-8 sm:w-1/2">
+      <a class="text-base block duration-700 transform-gpu hover:-translate-y-4" href="/works/vv3c/">
+        
+        <img src="images/work/vv3c-thumb.webp" class="border border-gray-400 shadow-xl hover:shadow-2xl" alt="work-thumb" loading="lazy" decoding="async">
+        <h3 class="mt-2 text-lg font-normal">
+          VV3C
+        </h3>
+      </a>
+    </div>
+    
+    <div class="p-8 sm:w-1/2">
+      <a class="text-base block duration-700 transform-gpu hover:-translate-y-4" href="/works/midea/">
+        
+        <img src="images/work/msmart-thumb.webp" class="border border-gray-400 shadow-xl hover:shadow-2xl" alt="work-thumb" loading="lazy" decoding="async">
+        <h3 class="mt-2 text-lg font-normal">
+          Midea Smart Home
+        </h3>
+      </a>
+    </div>
+    
+    <a href="/work" class="mt-24 mx-auto btn">See all work</a>
+  </div>
+</section>
+
+<section data-bg="#f3e7df">
+  <div class="container px-6 py-32 px">
+    <h4 class="mb-12 uppercase">Things we do well</h4>
+    <div class="flex flex-col lg:flex-row flex-wrap">
+      <ul class="w-full lg:w-1/2 text-3xl font-extralight leading-loose">
+        <li>Wordpress</li>
+        <li>Builder</li>
+        <li>Hugo/Eleventy</li>
+        <li>Gatsby</li>
+        <li>Webpack/Snowpack</li>
+      </ul>
+      <ul class="w-full lg:w-1/2 text-3xl font-extralight leading-loose">
+        <li>Front-end Development</li>
+        <li>Web Design</li>
+        <li>UI/UX Design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-bg="#c3cfd7">
+  <div class="container min-h-screen px-6 py-48">
+    <h4 class="mb-16 uppercase">Our clients</h4>
+    <ul class="clients ">
+      <li data-sal="slide-up" data-sal-duration="1000">
+        <a href="//panasonic.cn/"><img src="images/clients/logo-panasonic.png" alt="Panasonic" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//midea.com/cn/"><img src="images/clients/logo-midea.png" alt="Midea" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//colmo.com.cn/"><img src="images/clients/logo-colmo.png" alt="COLMO" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//haier.com/"><img src="images/clients/logo-haier.png" alt="Haier" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//tcl.com/"><img src="images/clients/logo-tcl.png" alt="TCL" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//joyoung.com/"><img src="images/clients/logo-joyoung.png" alt="Joyoung" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//robam.com/"><img src="images/clients/logo-robam.png" alt="Robam" loading="lazy" decoding="async"></a>
+      </li>
+      <li data-sal="slide-up">
+        <a href="//whirlpool.com.cn/"><img src="images/clients/logo-whirlpool.png" alt="Whirlpool" loading="lazy" decoding="async"></a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <footer class="w-full flex flex-col" data-bg="#000">
+  <div class="container p-12">
+    <figure class="flex items-center">
+      <a href="https://emptyarea.com/" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="700">
+        <img src="images/logo-light.svg" alt="emptyarea" class="w-12">
+      </a>
+      <figcaption class="hidden">emptyarea.com</figcaption>
+    </figure>
+    <p class="mx-auto max-w-2xl py-48 text-gray-300 text-2xl lg:text-4xl font-extralight leading-relaxed lg:leading-relaxed z-10" data-sal="slide-up-2" data-sal-duration="1000">If you want a great-to-work-with developer to help create websites people really enjoy, <a class="underline" href="mailto:taoguangc@gmail.com?subject=Mail from Emptyarea">get in touch.</a></p>
+    <small class="text-white">
+      Copyright © 2021 Powered by ❤ by 
+      <a href="https://emptyarea.com/" target="_blank" class="underline">Jeffrey Qian</a>
+      •
+    </small>
+  </div>
+</footer>
+<a href="#" class="fixed w-12 h-12 bottom-10 right-10 text-white border border-black bg-gray-800 rounded-full flex justify-center items-center transform transition duration-500 hover:bg-white hover:text-black"
+x-show="toTop"
+x-transition:enter="transition ease-out duration-300"
+x-transition:enter-start="opacity-0 translate-y-16 transform"
+x-transition:leave="transition ease-in duration-300"
+x-transition:leave-end="opacity-0 translate-y-16 transform"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</a>
+
+<script>
+const sections = [...document.getElementsByTagName("section"), document.getElementsByTagName("footer")[0]]
+window.addEventListener("scroll", function () {
+  const scrollFromTop = window.pageYOffset
+  for (let i = 0; sections.length > i; i++) {
+    const half = window.innerHeight / 2
+    if (scrollFromTop < sections[i].offsetTop + half) {
+      document.body.style.backgroundColor = sections[i].getAttribute("data-bg")
+      break
+    }
+  }
+})
+</script>
+</body>
+</html>
